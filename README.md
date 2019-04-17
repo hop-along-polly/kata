@@ -29,4 +29,5 @@ Covered topics are listed in order from easiest to most challenging.
 
 
 ## Contributing
-I would love additional language contributions. I plan on providing tests in Python, C#, and Go, but javascript (node,js), Rust etc. would be awesome.
+I would love additional language contributions. I plan on providing tests in Python, C#, javascript (node.js), but Golang and Rust would be awesome.
+This project aims to be a framework for teaching new developers so documentation, READMEs and clean code are essential.
