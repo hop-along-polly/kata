@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, val):
+    def __init__(self, value):
         """
         Creates an instance of a Node with the provided value without being linked to a next or prev node.
 
