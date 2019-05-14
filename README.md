@@ -7,16 +7,19 @@ while requiring/teaching good OO principles and code organization.
 
 
 ## Structure
-Data structures, algorithms, SOLID design principles, and OO transcend any on programming language and as a polyglot I want to teach
-these concepts in various languages so there is a folder for each supported language that provides the unit tests you should use. Each
-folder contains it's own README with language specific setup as well as a list of tools needed for running the unit tests.
+Data structures, algorithms, Test-Driven-development, SOLID design principles, and OO transcend any programming language. As a
+self proclaimed polyglot I want to teach these concepts in various language. You will find a folder for each of the concepts
+containing a README that explains the data structure, covers algorithmic complexity and explores some algorithms that use that
+data structure. Every concept folder will have language specific subfolders (i.e. python, node, C#) etc. containing everything
+you need to get started including a README, requirements files, and most importantly unit tests.
 
 
 ## Topics
 Covered topics are listed in order from easiest to most challenging.
  1. Linked List
-    1. Doubly Linked List
-    2. Circular Linked List
+    1. Singly Linked List  
+    2. Doubly Linked List
+    3. Circular Linked List
  3. Heaps
  4. Hash Table
  5. Trees
@@ -29,4 +32,5 @@ Covered topics are listed in order from easiest to most challenging.
 
 
 ## Contributing
-I would love additional language contributions. I plan on providing tests in Python, C#, and Go, but javascript (node,js), Rust etc. would be awesome.
+I would love additional language contributions. I plan on providing tests in Python, C#, javascript (node.js), but Golang and Rust would be awesome.
+This project aims to be a framework for teaching new developers so documentation, READMEs and clean code are essential.
