@@ -1,9 +1,16 @@
 import pytest
 
-from .linked_list import LinkedList
+from .linked_list import (
+    LinkedList,
+    DoublyLinkedList
+)
 from .node import Node
 from .exceptions import NodeNotFoundException
 
+
+########################################
+#       Singly Linked List Tests       #
+########################################
 
 def test_ll_construct_empty_list():
     subject = LinkedList()
@@ -86,3 +93,82 @@ def test_ll_remove_node_that_appears_multiple_times():
 
     assert subject.remove('b') == 'b'
     assert subject == ['a', 'b', 'c']
+
+
+########################################
+#       Doubly Linked List Tests       #
+########################################
+
+def test_dl_construct_empty_list():
+    subject = DoublyLinkedList()
+    assert subject == []
+
+
+def test_dl_add_to_empty_list():
+    subject = DoublyLinkedList()
+
+    node = Node('a')
+    subject.add(node)
+
+    assert subject == ['a']
+
+
+def test_dl_add_to_populated_list():
+    subject = DoublyLinkedList()
+    subject.add(Node('existing'))
+
+    node = Node('new')
+    subject.add(node)
+
+    assert subject == ['existing', 'new']
+
+
+def test_dl_remove_empty_list():
+    subject = DoublyLinkedList()
+    subject.remove('dne')
+
+    assert subject == []
+
+
+def test_dl_remove_first_item():
+    subject = DoublyLinkedList()
+    subject.add(Node('first'))
+    subject.add(Node('second'))
+
+    subject.remove('first')
+
+    assert subject == ['second']
+
+
+def test_dl_remove_last_item():
+    subject = DoublyLinkedList()
+    subject.add(Node('first'))
+    subject.add(Node('second'))
+
+    subject.remove('second')
+
+    assert subject.as_list() == ['first']
+    assert subject == ['first']
+
+
+def test_dl_remove_item_in_middle_of_list():
+    subject = DoublyLinkedList()
+    subject.add(Node('first'))
+    subject.add(Node('second'))
+    subject.add(Node('third'))
+
+    subject.remove('second')
+
+    assert subject == ['first', 'third']
+
+
+def test_dl_remove_node_that_appears_multiple_times():
+    subject = DoublyLinkedList()
+    subject.add(Node('a'))
+    subject.add(Node('b'))
+    subject.add(Node('c'))
+    subject.add(Node('b'))
+
+    subject.remove('b')
+
+    assert subject == ['a', 'c', 'b']
