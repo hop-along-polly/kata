@@ -58,6 +58,17 @@ def test_ll_remove_first_item_in_list():
     assert subject == []
 
 
+def test_ll_remove_first_item_in_populated_list():
+    subject = LinkedList()
+    subject.add(Node('first'))
+    subject.add(Node('second'))
+
+    actual = subject.remove('first')
+    assert actual == 'first'
+    assert subject.as_list() == ['second']
+    assert subject == ['second']
+
+
 def test_ll_remove_item_in_middle_of_list():
     subject = LinkedList()
     subject.add(Node('a'))
