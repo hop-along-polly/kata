@@ -2,7 +2,8 @@ import pytest
 
 from .linked_list import (
     LinkedList,
-    DoublyLinkedList
+    DoublyLinkedList,
+    CircularList
 )
 from .node import Node
 from .exceptions import NodeNotFoundException
@@ -172,3 +173,95 @@ def test_dl_remove_node_that_appears_multiple_times():
     subject.remove('b')
 
     assert subject == ['a', 'c', 'b']
+
+########################################
+#     Circularly Linked List Tests     #
+########################################
+
+def test_cl_construct_empty_list():
+    subject = CircularList()
+    assert subject == []
+
+
+def test_cl_add_to_empty_list():
+    subject = CircularList()
+
+    actual = subject.add(Node('a'))
+
+    assert actual.value == 'a'
+    assert subject == ['a']
+
+
+def test_cl_add_to_populated_list():
+    subject = CircularList()
+    subject.add(Node('a'))
+
+    actual = subject.add(Node('b'))
+
+    assert actual.value == 'b'
+    assert subject == ['a', 'b']
+
+
+def test_cl_add_to_list_of_2_plus():
+    subject = CircularList()
+    subject.add(Node('a'))
+    subject.add(Node('b'))
+    
+    actual = subject.add(Node('c'))
+
+    assert actual.value == 'c'
+    assert subject.as_list() == ['a', 'b', 'c']
+    assert subject == ['a', 'b', 'c']
+
+
+def test_cl_remove_empty_list():
+    subject = CircularList()
+
+    assert subject.remove('dne') is None
+
+
+def test_cl_remove_only_item():
+    subject = CircularList()
+    subject.add(Node('a'))
+
+    actual = subject.remove('a')
+
+    assert actual.value == 'a'
+    assert subject == []
+
+
+def test_cl_remove_first_item_in_list():
+    subject = CircularList()
+    subject.add(Node('a'))
+    subject.add(Node('b'))
+
+    actual = subject.remove('a')
+
+    assert actual.value == 'a'
+    assert subject == ['b']
+
+
+def test_cl_remove_last_item_in_list():
+    subject = CircularList()
+    subject.add(Node('a'))
+    subject.add(Node('b'))
+
+    actual = subject.remove('b')
+
+    assert actual.value == 'b'
+    assert subject == ['a']
+
+
+def test_cl_remove_item_from_middle_of_list():
+    subject = CircularList()
+    subject.add(Node('a'))
+    subject.add(Node('b'))
+    subject.add(Node('c'))
+    subject.add(Node('d'))
+    subject.add(Node('e'))
+    subject.add(Node('f'))
+
+    actual = subject.remove('d')
+
+    assert actual.value == 'd'
+    assert subject == ['a', 'b', 'c', 'e', 'f']
