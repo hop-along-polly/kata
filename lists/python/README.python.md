@@ -17,10 +17,10 @@ _NOTE: using `-x` is recommended so you can follow a flow similar to test driven
 
 You can filter out specific tests i.e. just the DoublyLinkedList tests using the `-k` flag.
 ```bash
-pytest -x -k test_dll lists/
+pytest -x -k test_dl lists/
 ```
 
 You can use the following filters to run tests for the specific type of lists
   - LinkedList: `-k test_ll`
-  - DoubleLinkedList: `-k test_dll`
-  - CircularlyLinkedList: `-k test_cll`
+  - DoubleLinkedList: `-k test_dl`
+  - CircularlyLinkedList: `-k test_cl`
