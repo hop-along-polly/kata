@@ -24,18 +24,98 @@ class List(ABC):
 
 
 class LinkedList(List):
-    """
-    Implement a Singly Linked List Here
-    """
+    def _is_empty(self):
+        return self.HEAD is None
+
+    # Add to the end   
+    def add(self, node):
+        if self._is_empty():
+            self.HEAD = node
+            return node.value
+        
+        # Find the end of the list
+        curr = self.HEAD
+        while curr.next is not None:
+            curr = curr.next
+
+        # Link the node to the end of the list
+        curr.next = node
+
+        return node.value
+
+   
+    def remove(self, value):
+        if self._is_empty():
+            return None
+
+        # Remove node if first node
+        if self.HEAD.value is value:
+            self.HEAD = self.HEAD.next
+            return value
 
 
+        elif self.HEAD.value is not value:
+            curr = self.HEAD.next
+            previous = self.HEAD
+            while curr is not None:
+                if(curr.value == value):
+                    previous.next = curr.next
+                    return value
+                elif curr is not value:
+                    curr = curr.next
+                    previous = previous.next
+            return None
+
+    # def find(self, value):
+    #     if self.HEAD is None:
+    #         return None
+    #     elif(self.HEAD != None):
+    #         curr = self.HEAD
+    #         if(curr.value == value):
+    #             return curr
+    #         elif(curr.value != value and curr.next != None):
+    #             curr = curr.next
+    #         else:
+    #             return None
+   
 class DoublyLinkedList(List):
-    """
-    Implement a Double Linked List Here
-    """
+    # Add to the end   
+    def add(self, node):
+        # Check to see if if list is empty
+        if self.HEAD is None:
+            self.HEAD = node
+            return node.value
+        
+        # Find last node
+        curr = self.HEAD
+        while curr.next is not None:
+            curr = curr.next
+        
+        # Attach new node to end of list
+        curr.next = node
+        node.prev = curr
+        return node.value
+            
+
 
 
 class CircularList(List):
     """
-    Implement a Circularly Linked List Here
+    Implement a Double Linked List Here
     """
+    # Add to the end   
+    # def add(self, node):
+    #     if self.HEAD is None:
+    #         self.HEAD = node
+    #         node.next = node
+    #         return node.value
+        
+    #     # Find the end of the list
+    #     curr = self.HEAD
+    #     while curr.next is not self.HEAD:
+    #         curr = curr.next
+
+    #     # Link the node to the end of the list
+    #     curr.next = node
+
+    #     return node.value
