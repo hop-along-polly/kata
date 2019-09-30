@@ -95,16 +95,19 @@ class DoublyLinkedList(List):
         curr.next = node
         node.prev = curr
         return node.value
-            
+    
+    def remove(self,value):
+        if self.HEAD is None:
+            return None
+
+        return value    
 
 
 
 class CircularList(List):
-    """
-    Implement a Double Linked List Here
-    """
     # Add to the end   
-    # def add(self, node):
+    def add(self, node):
+        pass
     #     if self.HEAD is None:
     #         self.HEAD = node
     #         node.next = node
@@ -119,3 +122,5 @@ class CircularList(List):
     #     curr.next = node
 
     #     return node.value
+    def remove(self,value):
+        pass
