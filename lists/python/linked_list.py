@@ -95,7 +95,12 @@ class DoublyLinkedList(List):
         curr.next = node
         node.prev = curr
         return node.value
-            
+    
+    def remove(self,value):
+        if self.HEAD is None:
+            return None
+
+        return value    
 
 
 
@@ -110,7 +115,8 @@ def is_valid(subject: str) -> bool:
     class
     """
     # Add to the end   
-    # def add(self, node):
+    def add(self, node):
+        pass
     #     if self.HEAD is None:
     #         self.HEAD = node
     #         node.next = node
