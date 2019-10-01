@@ -67,7 +67,6 @@ def test_sl_remove_first_item_in_list():
 
     # act
     actual = subject.remove('a')
-    
     # assert
     assert actual == 'a'
     assert subject == []
@@ -127,7 +126,7 @@ def test_sl_remove_node_that_appears_multiple_times():
 ########################################
 #       Doubly Linked List Tests       #
 ########################################
-
+#10
 def test_dl_construct_empty_list():
     # arrange
     subject = DoublyLinkedList()
@@ -135,7 +134,7 @@ def test_dl_construct_empty_list():
     # act/assert
     assert subject == []
 
-
+#11
 def test_dl_add_to_empty_list():
     # arrange
     subject = DoublyLinkedList()
@@ -147,7 +146,7 @@ def test_dl_add_to_empty_list():
     # assert
     assert subject == ['a']
 
-
+#12
 def test_dl_add_to_populated_list():
     subject = DoublyLinkedList()
     subject.add(Node('existing'))
@@ -159,18 +158,17 @@ def test_dl_add_to_populated_list():
     # assert
     assert subject == ['existing', 'new']
 
-
+#13
 def test_dl_remove_empty_list():
     # arrange
     subject = DoublyLinkedList()
-
     #act
     subject.remove('dne')
 
     # assert
     assert subject == []
 
-
+#14
 def test_dl_remove_first_item():
     # arrange
     subject = DoublyLinkedList()
@@ -183,7 +181,7 @@ def test_dl_remove_first_item():
     # assert
     assert subject == ['second']
 
-
+#15
 def test_dl_remove_last_item():
     # arrange
     subject = DoublyLinkedList()
@@ -197,7 +195,7 @@ def test_dl_remove_last_item():
     assert subject.as_list() == ['first']
     assert subject == ['first']
 
-
+#16
 def test_dl_remove_item_in_middle_of_list():
     # arrange
     subject = DoublyLinkedList()
@@ -211,7 +209,7 @@ def test_dl_remove_item_in_middle_of_list():
     # assert
     assert subject == ['first', 'third']
 
-
+#17
 def test_dl_remove_node_that_appears_multiple_times():
     # arrange
     subject = DoublyLinkedList()
@@ -238,7 +236,7 @@ def test_cl_construct_empty_list():
     # act/assert
     assert subject == []
 
-
+#19
 def test_cl_add_to_empty_list():
     # arrange
     subject = CircularList()
@@ -250,7 +248,7 @@ def test_cl_add_to_empty_list():
     assert actual.value == 'a'
     assert subject == ['a']
 
-
+#20
 def test_cl_add_to_populated_list():
     # arrange
     subject = CircularList()
@@ -263,7 +261,7 @@ def test_cl_add_to_populated_list():
     assert actual.value == 'b'
     assert subject == ['a', 'b']
 
-
+#21
 def test_cl_add_to_list_of_2_plus():
     # arrange
     subject = CircularList()
@@ -278,7 +276,7 @@ def test_cl_add_to_list_of_2_plus():
     assert subject.as_list() == ['a', 'b', 'c']
     assert subject == ['a', 'b', 'c']
 
-
+#22
 def test_cl_remove_empty_list():
     # arrange
     subject = CircularList()
@@ -286,7 +284,7 @@ def test_cl_remove_empty_list():
     # assert
     assert subject.remove('dne') is None
 
-
+#23
 def test_cl_remove_only_item():
     # arrange
     subject = CircularList()
@@ -299,7 +297,7 @@ def test_cl_remove_only_item():
     assert actual.value == 'a'
     assert subject == []
 
-
+#24
 def test_cl_remove_first_item_in_list():
     # arrange
     subject = CircularList()
@@ -313,7 +311,7 @@ def test_cl_remove_first_item_in_list():
     assert actual.value == 'a'
     assert subject == ['b']
 
-
+#25
 def test_cl_remove_last_item_in_list():
     # arrange
     subject = CircularList()
@@ -327,7 +325,7 @@ def test_cl_remove_last_item_in_list():
     assert actual.value == 'b'
     assert subject == ['a']
 
-
+#26
 def test_cl_remove_item_from_middle_of_list():
     # arrange
     subject = CircularList()
