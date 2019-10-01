@@ -100,7 +100,29 @@ class DoublyLinkedList(List):
         if self.HEAD is None:
             return None
 
-        return value    
+        # Remove node if first node
+        elif self.HEAD.value is value:
+            # Check to see if there is only one node
+            if self.HEAD.next is None:
+                self.HEAD = None
+
+            else:
+                self.HEAD = self.HEAD.next
+                self.HEAD.prev = None
+                return value    
+
+        curr = self.HEAD.next
+        while curr.value is not value:
+            if curr is None:
+                return None
+            curr = curr.next
+
+        curr.prev.next = curr.next
+
+        if curr.next is not None: 
+            curr.next.prev = curr.prev
+
+        return value   
 
 
 
