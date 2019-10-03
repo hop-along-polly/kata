@@ -13,12 +13,12 @@ from .exceptions import NodeNotFoundException
 #       Singly Linked List Tests       #
 ########################################
 #1
-def test_ll_construct_empty_list():
+def test_sl_construct_empty_list():
     subject = LinkedList()
     assert subject == []
 
 #2
-def test_ll_add_to_empty_list():
+def test_sl_add_to_empty_list():
     # arrange
     subject = LinkedList()
     node = Node('a')
@@ -31,7 +31,7 @@ def test_ll_add_to_empty_list():
     assert subject == ['a']
 
 #3
-def test_ll_add_to_populated_list():
+def test_sl_add_to_populated_list():
     # arrange
     subject = LinkedList()
 
@@ -50,7 +50,7 @@ def test_ll_add_to_populated_list():
     assert subject == ['existing', 'new']
 
 #4
-def test_ll_remove_empty_list():
+def test_sl_remove_empty_list():
     # arrange
     subject = LinkedList()
     
@@ -59,7 +59,7 @@ def test_ll_remove_empty_list():
     assert subject == []
 
 #5
-def test_ll_remove_first_item_in_list():
+def test_sl_remove_first_item_in_list():
     # arrange
     subject = LinkedList()
     subject.add(Node('a'))
@@ -70,7 +70,7 @@ def test_ll_remove_first_item_in_list():
     assert subject == []
 
 #6
-def test_ll_remove_first_item_in_populated_list():
+def test_sl_remove_first_item_in_populated_list():
     # arrange
     subject = LinkedList()
     subject.add(Node('first'))
@@ -85,7 +85,7 @@ def test_ll_remove_first_item_in_populated_list():
     assert subject == ['second']
 
 #7
-def test_ll_remove_item_in_middle_of_list():
+def test_sl_remove_item_in_middle_of_list():
     # arrange
     subject = LinkedList()
     subject.add(Node('a'))
@@ -97,7 +97,7 @@ def test_ll_remove_item_in_middle_of_list():
     assert subject == ['a', 'c']
 
 #8
-def test_ll_remove_last_item_in_the_list():
+def test_sl_remove_last_item_in_the_list():
     # arrange
     subject = LinkedList()
     subject.add(Node('a'))
@@ -108,7 +108,7 @@ def test_ll_remove_last_item_in_the_list():
     assert subject == ['a']
 
 #9
-def test_ll_remove_node_that_appears_multiple_times():
+def test_sl_remove_node_that_appears_multiple_times():
     # arrange
     subject = LinkedList()
     subject.add(Node('a'))
@@ -128,6 +128,7 @@ def test_ll_remove_node_that_appears_multiple_times():
 def test_dl_construct_empty_list():
     # arrange
     subject = DoublyLinkedList()
+
     # assert
     assert subject == []
 
@@ -159,6 +160,7 @@ def test_dl_add_to_populated_list():
 def test_dl_remove_empty_list():
     # arrange
     subject = DoublyLinkedList()
+
     #act
     subject.remove('dne')
 
@@ -229,6 +231,7 @@ def test_dl_remove_node_that_appears_multiple_times():
 def test_cl_construct_empty_list():
     # arrange
     subject = CircularList()
+    
     # assert
     assert subject == []
 
