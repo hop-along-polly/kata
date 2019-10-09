@@ -136,6 +136,9 @@ def is_valid(subject: str) -> bool:
     Implement the is_valid function using the push and pop methods on the LinkedList
     class
     """
+
+
+class CircularList(List):
     # Add to the end   
     def add(self, node):
         pass
@@ -153,3 +156,5 @@ def is_valid(subject: str) -> bool:
     #     curr.next = node
 
     #     return node.value
+    def remove(self,value):
+        pass

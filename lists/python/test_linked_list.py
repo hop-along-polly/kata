@@ -118,7 +118,7 @@ def test_sl_remove_node_that_appears_multiple_times():
     subject.add(Node('b'))
     subject.add(Node('c'))
 
-    # act/assert
+    # assert
     assert subject.remove('b') == 'b'
     assert subject == ['a', 'b', 'c']
 
