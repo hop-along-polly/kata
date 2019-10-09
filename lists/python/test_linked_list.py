@@ -3,7 +3,8 @@ import pytest
 from .linked_list import (
     LinkedList,
     DoublyLinkedList,
-    CircularList
+    CircularList,
+    is_valid
 )
 from .node import Node
 from .exceptions import NodeNotFoundException
@@ -276,3 +277,20 @@ def test_cl_remove_item_from_middle_of_list():
 
     assert actual.value == 'd'
     assert subject == ['a', 'b', 'c', 'e', 'f']
+
+########################################
+#     Using Linked List as a Stack     #
+########################################
+
+def test_alg_is_valid():
+    test = '()'
+    assert is_valid(test) is True
+
+
+def test_alg_is_not_valid():
+    test = '('
+    assert is_valid(test) is False
+
+
+def test_alg_out_of_order():
+    assert is_valid('({)}') == False
