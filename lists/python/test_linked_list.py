@@ -28,7 +28,7 @@ def test_sl_add_to_empty_list():
     actual = subject.add(node)
 
     # assert
-    assert actual == 'a'
+    assert actual == node
     assert subject == ['a']
 
 
@@ -47,7 +47,7 @@ def test_sl_add_to_populated_list():
     actual = subject.add(new_node)
 
     # assert
-    assert actual == 'new'
+    assert actual == new_node
     assert subject == ['existing', 'new']
 
 
