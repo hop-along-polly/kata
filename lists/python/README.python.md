@@ -24,3 +24,33 @@ You can use the following filters to run tests for the specific type of lists
   - LinkedList: `-k test_ll`
   - DoubleLinkedList: `-k test_dl`
   - CircularlyLinkedList: `-k test_cl`
+
+
+## Interview Question Warm-Up
+Most technical interviews require a developer to implement a function with some
+constraints on the algorithmic and space complexity. To help prepare for interviews this
+section talks about one such algorithm that can be solved using a LinkedList to implement
+a Stack. A Stack if a First-In-Last-Out `(FILO)` data structure. So the first thing
+`pushed` onto the Stack is the last thing to be `pop`ed off the Stack. To truly support
+this you will need to implement a `push` and `pop` function.
+
+`push` will take a node just like add but will always add it to the front of the list.
+`pop` will always remove the node that HEAD points to.
+
+Your challenge should you choose to accept it is to implement a function that takes in a
+string and determines if all of the `(`, `{`, and `[` have a corresponding closing `]`,
+`}`, `)`.
+
+For example
+```python
+example = '()[]{}';
+is_valid(example)
+# returns True
+
+example = '('
+is_valid(example)
+# returns False
+```
+
+To help you get started you should push when you encounter a `(`, `{`, `[` and pop when
+you encounter a `]` `}`, and `)`.

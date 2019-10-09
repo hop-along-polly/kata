@@ -39,3 +39,9 @@ class CircularList(List):
     """
     Implement a Circularly Linked List Here
     """
+
+def is_valid(subject: str) -> bool:
+    """
+    Implement the is_valid function using the push and pop methods on the LinkedList
+    class
+    """
