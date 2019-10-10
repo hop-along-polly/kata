@@ -31,7 +31,7 @@ class LinkedList(List):
     def add(self, node):
         if self._is_empty():
             self.HEAD = node
-            return node.value
+            return node
         
         # Find the end of the list
         curr = self.HEAD
@@ -41,42 +41,31 @@ class LinkedList(List):
         # Link the node to the end of the list
         curr.next = node
 
-        return node.value
+        return node
 
    
-    def remove(self, value):
+    def remove(self, node):
         if self._is_empty():
             return None
 
         # Remove node if first node
-        if self.HEAD.value is value:
+        if self.HEAD.value == node.value:
             self.HEAD = self.HEAD.next
-            return value
+            return node
 
 
-        elif self.HEAD.value is not value:
+        elif self.HEAD.value is not node.value:
             curr = self.HEAD.next
             previous = self.HEAD
             while curr is not None:
-                if(curr.value == value):
+                if(curr.value == node.value):
                     previous.next = curr.next
-                    return value
-                elif curr is not value:
+                    return node
+                elif curr is not node.value:
                     curr = curr.next
                     previous = previous.next
             return None
 
-    # def find(self, value):
-    #     if self.HEAD is None:
-    #         return None
-    #     elif(self.HEAD != None):
-    #         curr = self.HEAD
-    #         if(curr.value == value):
-    #             return curr
-    #         elif(curr.value != value and curr.next != None):
-    #             curr = curr.next
-    #         else:
-    #             return None
    
 class DoublyLinkedList(List):
     # Add to the end   
@@ -124,20 +113,6 @@ class DoublyLinkedList(List):
 
         return value   
 
-
-
-class CircularList(List):
-    """
-    Implement a Double Linked List Here
-    """
-
-def is_valid(subject: str) -> bool:
-    """
-    Implement the is_valid function using the push and pop methods on the LinkedList
-    class
-    """
-
-
 class CircularList(List):
     # Add to the end   
     def add(self, node):
@@ -158,3 +133,9 @@ class CircularList(List):
     #     return node.value
     def remove(self,value):
         pass
+
+def is_valid(subject: str) -> bool:
+    """
+    Implement the is_valid function using the push and pop methods on the LinkedList
+    class
+    """
