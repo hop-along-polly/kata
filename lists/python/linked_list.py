@@ -114,8 +114,15 @@ class DoublyLinkedList(List):
         return value   
 
 class CircularList(List):
+    
     # Add to the end   
     def add(self, node):
+        import pdb
+        pdb.set_trace()
+        print("I'm here")
+        # run test
+        # l
+        # type variable name you want ie node, or node.value
         pass
     #     if self.HEAD is None:
     #         self.HEAD = node

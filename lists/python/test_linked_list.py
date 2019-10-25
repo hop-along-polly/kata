@@ -26,13 +26,10 @@ def test_sl_add_to_empty_list():
 
     # act
     actual = subject.add(node)
-    next_node = actual.next
-    previous_node = actual.prev
 
     # assert
     assert actual == node
-    assert next_node == None
-    assert previous_node == None
+    assert actual.next == None
     assert subject == ['a']
 
 
@@ -52,6 +49,7 @@ def test_sl_add_to_populated_list():
 
     # assert
     assert actual == new_node
+    assert existing_node.next == new_node
     assert subject == ['existing', 'new']
 
 
@@ -75,6 +73,7 @@ def test_sl_remove_first_item_in_list():
 
     # assert
     assert actual == node
+    assert actual.next == None
     assert subject == []
 
 
@@ -153,6 +152,7 @@ def test_dl_add_to_empty_list():
     #act
     node = Node('a')
     subject.add(node)
+    previous_node = actual.prev
 
     # assert
     assert subject == ['a']
@@ -165,6 +165,7 @@ def test_dl_add_to_populated_list():
     #act
     node = Node('new')
     subject.add(node)
+    previous_node = actual.prev
 
     # assert
     assert subject == ['existing', 'new']
@@ -173,8 +174,10 @@ def test_dl_add_to_populated_list():
 def test_dl_remove_empty_list():
     # arrange
     subject = DoublyLinkedList()
+
     #act
     subject.remove('dne')
+    previous_node = actual.prev
 
     # assert
     assert subject == []
@@ -188,6 +191,7 @@ def test_dl_remove_first_item():
 
     #act
     subject.remove('first')
+    previous_node = actual.prev
 
     # assert
     assert subject == ['second']
