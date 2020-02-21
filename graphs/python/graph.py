@@ -1,10 +1,5 @@
-import string
-
-from typing import List
-
 class NodeDoesNotExistException(Exception):
     pass
-
 
 class Graph:
     """
@@ -27,12 +22,6 @@ class Graph:
         self.node_map = {}
         self._distances = {}
         self._visited = []
-        nodes = [] if nodes is None else nodes
-        for node in nodes:
-            try:
-                self.add(node.id, node.weight, neighbors=[neighbor.id for neighbor in node.neighbors])
-            except KeyError:
-                pass
 
     @property
     def empty(self):
@@ -41,34 +30,6 @@ class Graph:
     @property
     def nodes(self):
         return [ n for n_id, n in self.node_map.items()]
-
-    @classmethod
-    def create(cls, matrix = None):
-        if not matrix or not matrix[0]:
-            return cls([])
-
-        nodes = []
-        matrix_copy = [row[:] for row in matrix]
-        for i in range(len(matrix_copy)):
-            for j in range(len(matrix_copy[i])):
-                # If I need to dynamically choose the id
-                node = Graph.Node(
-                    matrix_copy[i][j][0], # maps to nodes ID
-                    matrix_copy[i][j][1] # maps to nodes weight
-                )
-                matrix_copy[i][j] = node
-                nodes.append(node)
-
-                # horizontal relationships
-                if j > 0:
-                    node.add_neighbor(matrix_copy[i][j-1])
-                    matrix_copy[i][j-1].add_neighbor(node)
-                # # vertical relationships
-                if i > 0:
-                    node.add_neighbor(matrix_copy[i-1][j])
-                    matrix_copy[i-1][j].add_neighbor(node)
-
-        return cls(nodes)
 
     def add(self, node_id: str, weight: int, neighbors: list=None) -> Node:
         """
