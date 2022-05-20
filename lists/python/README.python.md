@@ -6,7 +6,7 @@ free to define your own `Node` but the tests do expect the predefined structure.
 the lists inherit from a base `List` class which provides a `__eq__` method that helps in
 the unit test assertions. If you choose to break that inheritance you'll need to provide a
 similar implementation to `List.__eq__`.
-_NOTE: the `Node` class defines a prev attribute that can be ignored for the SingluarLinkedList._
+__NOTE: the `Node` class defines a prev attribute that can be ignored for the SingluarLinkedList.__
 
 ## Running the Tests
 To run the tests for linked lists use the following command

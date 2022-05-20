@@ -1,10 +1,18 @@
 # Kata
-There are a ton of online coding Dojos; CodeWars, HackerRank etc. and kata are common place in technical interviews.
-Most often the kata presented in an interview are academic in nature despite the fact most developers do not use these
-concepts outside of their academic careers. This repo houses some academic kata that will help developers prepare for
-kata presented in coding interviews by providing a unit tests verifying the common data strcutures, some of their algorithms
-while requiring/teaching good OO principles and code organization.
+There are a ton of online coding Dojos out there; CodeWars, HackerRank etc. and kata are common
+place in technical interviews. Most often the kata presented in an interview are academic
+in nature and rely on a specific algorithm or data structure that an inteviewee may not have
+used outside of their academic career.
 
+This repo contains what I consider to be fundamental kata. Through these kata you will learn
+how to build data structures like linked lists, binary search trees, and graphs as well as
+how to use them to solve common algorithm based questions all while enforcing good coding
+discipline around coding style, Test Driven Development (TDD) and Object Oriented best
+practices like SOLID Design Principles.
+
+Each kata is accompanied by a README explaining the Data Structure/Algorithm and a full test
+suite so you can follow TDD while solving it. Look to the specific README within the language
+folder for specific environment or kata specific instructions.
 
 ## Structure
 Data structures, algorithms, Test-Driven-development, SOLID design principles, and OO transcend any programming language. As a
